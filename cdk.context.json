@@ -1,0 +1,65 @@
+{
+  "ssm:account=820242933814:parameterName=/ops-lab/networking/vpc-id:region=ap-southeast-2": "vpc-0a023605dee5a4555",
+  "ssm:account=820242933814:parameterName=/ops-lab/networking/subnet/isolated-0:region=ap-southeast-2": "subnet-03d80e57bc79534b2",
+  "ssm:account=820242933814:parameterName=/ops-lab/networking/subnet/isolated-1:region=ap-southeast-2": "subnet-04a0b4c530716401d",
+  "ssm:account=820242933814:parameterName=/ops-lab/networking/subnet/isolated-2:region=ap-southeast-2": "subnet-0b71f6ad343f244de",
+  "vpc-provider:account=820242933814:filter.vpc-id=vpc-0a023605dee5a4555:region=ap-southeast-2:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-0a023605dee5a4555",
+    "vpcCidrBlock": "10.0.0.0/16",
+    "ownerAccountId": "820242933814",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "isolated",
+        "type": "Isolated",
+        "subnets": [
+          {
+            "subnetId": "subnet-03d80e57bc79534b2",
+            "cidr": "10.0.3.0/24",
+            "availabilityZone": "ap-southeast-2a",
+            "routeTableId": "rtb-0bdbf452535bfd757"
+          },
+          {
+            "subnetId": "subnet-04a0b4c530716401d",
+            "cidr": "10.0.4.0/24",
+            "availabilityZone": "ap-southeast-2b",
+            "routeTableId": "rtb-0435a8f162e6fe935"
+          },
+          {
+            "subnetId": "subnet-0b71f6ad343f244de",
+            "cidr": "10.0.5.0/24",
+            "availabilityZone": "ap-southeast-2c",
+            "routeTableId": "rtb-0f4db348aa900b004"
+          }
+        ]
+      },
+      {
+        "name": "public",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-06a1077c1ae52cd46",
+            "cidr": "10.0.0.0/24",
+            "availabilityZone": "ap-southeast-2a",
+            "routeTableId": "rtb-0ff60440c98fa7685"
+          },
+          {
+            "subnetId": "subnet-03451a714a76f19c0",
+            "cidr": "10.0.1.0/24",
+            "availabilityZone": "ap-southeast-2b",
+            "routeTableId": "rtb-05ecbec29a79601a0"
+          },
+          {
+            "subnetId": "subnet-0142282c0067f2bfa",
+            "cidr": "10.0.2.0/24",
+            "availabilityZone": "ap-southeast-2c",
+            "routeTableId": "rtb-041b4a0d511ead51a"
+          }
+        ]
+      }
+    ]
+  },
+  "ssm:account=820242933814:parameterName=/ops-lab/networking/ssm-sg-id:region=ap-southeast-2": "sg-08ae40a35c3aa8c2b",
+  "ssm:account=820242933814:parameterName=/ops-lab/shared/cloudwatch-write-policy-arn:region=ap-southeast-2": "arn:aws:iam::820242933814:policy/OpsLabCloudWatchWrite",
+  "ssm:account=820242933814:parameterName=/ops-lab/shared/cw-agent-config-ssm-path:region=ap-southeast-2": "/ops-lab/shared/cw-agent-config"
+}
