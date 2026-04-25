@@ -116,6 +116,8 @@ class AppTierStack(Stack):
         user_data = ec2.UserData.for_linux()
         user_data.add_commands(
             "set -e",
+            # Neither are pre-installed on AL2023
+            "dnf install -y amazon-cloudwatch-agent nmap-ncat",
             # Fetch CW config from SSM, substitute log group placeholder, start agent
             f"aws ssm get-parameter --region {self.region} --name {cw_config_path}"
             " --query Parameter.Value --output text"
