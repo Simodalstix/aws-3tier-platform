@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Verify all three stacks are healthy by checking SSM outputs, ALB health,
 RDS connectivity (via SSM port forwarding), and Redis reachability.
