@@ -22,11 +22,12 @@ class AlarmsStack(Stack):
             self, "/ops-lab/shared/sns-topic-arn"
         )
 
-        # Dimension values — no format validation, safe with value_from_lookup
-        alb_full_name = ssm.StringParameter.value_from_lookup(
+        # Deploy-time resolution — these parameters don't exist until PresentationStack
+        # and AppTierStack are deployed, so value_from_lookup (synth-time) would fail.
+        alb_full_name = ssm.StringParameter.value_for_string_parameter(
             self, "/ops-lab/3tier/alb-full-name"
         )
-        tg_full_name = ssm.StringParameter.value_from_lookup(
+        tg_full_name = ssm.StringParameter.value_for_string_parameter(
             self, "/ops-lab/3tier/target-group-full-name"
         )
 
