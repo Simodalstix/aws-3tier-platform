@@ -209,3 +209,9 @@ class AppTierStack(Stack):
             parameter_name="/ops-lab/3tier/target-group-arn",
             string_value=self.target_group.target_group_arn,
         )
+        # Full name used as CloudWatch TargetGroup dimension (e.g. targetgroup/ops-lab-3tier-tg/abc123)
+        ssm.StringParameter(
+            self, "TargetGroupFullNameParam",
+            parameter_name="/ops-lab/3tier/target-group-full-name",
+            string_value=self.target_group.target_group_full_name,
+        )

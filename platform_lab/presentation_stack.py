@@ -79,9 +79,15 @@ class PresentationStack(Stack):
             protocol="HTTP",
         )
 
-        # --- SSM output ---
+        # --- SSM outputs ---
         ssm.StringParameter(
             self, "AlbDnsParam",
             parameter_name="/ops-lab/3tier/alb-dns-name",
             string_value=alb.load_balancer_dns_name,
+        )
+        # Full name used as CloudWatch LoadBalancer dimension (e.g. app/ops-lab-3tier-alb/abc123)
+        ssm.StringParameter(
+            self, "AlbFullNameParam",
+            parameter_name="/ops-lab/3tier/alb-full-name",
+            string_value=alb.load_balancer_full_name,
         )
